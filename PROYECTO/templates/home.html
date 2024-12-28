@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <Link rel="icon" type="image/png" href="{% static '/images/Recurso 7@600x (1).png' %}"></Link>
+    <Link rel="stylesheet" type="text/css" href="{% static '/CSS/estilos.css' %}"></Link>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SITIO WEB FITNESS</h1>
+    <p>ESTA ES LA MEJOR PAGINA FITNES VE A REGISTRARTE AHORA!</p>
+
+        <!-- Ahorro de Tiempo -->
+        <section class="container mt-5">
+            <h2><i class="bi bi-clock"></i> Ahorro de Tiempo</h2>
+            <p>En nuestra plataforma, te ayudamos a ahorrar tiempo al ofrecerte planes de entrenamiento y nutrición personalizados que se adaptan a tus necesidades y objetivos. Olvídate de perder tiempo buscando información, nosotros lo hacemos por ti.</p>
+        </section>
+    
+        <!-- Personalización -->
+        <section class="container mt-5">
+            <h2><i class="bi bi-person"></i> Personalización</h2>
+            <p>Cada cliente es único, por eso ofrecemos planes personalizados que se ajustan a tus metas, nivel de condición física y preferencias. Nuestro equipo de expertos trabaja contigo para crear un plan que sea efectivo y sostenible.</p>
+        </section>
+    
+        <!-- Consejos -->
+        <section class="container mt-5">
+            <h2><i class="bi bi-lightbulb"></i> Consejos</h2>
+            <p>Te ofrecemos consejos prácticos y fáciles de seguir para mejorar tu salud y bienestar. Desde tips de nutrición hasta técnicas de entrenamiento, estamos aquí para ayudarte a alcanzar tus objetivos.</p>
+        </section>
+    
+        <!-- Ayuda y Contacto -->
+        <section class="container mt-5">
+            <h2><i class="bi bi-question-circle"></i> Ayuda y Contacto</h2>
+            <p>¿Tienes alguna pregunta o necesitas ayuda? No dudes en contactarnos a través de WhatsApp. Estamos aquí para asistirte en todo lo que necesites.</p>
+            <a href="https://wa.me/1234567890" class="btn btn-success"><i class="bi bi-whatsapp"></i> Contactar por WhatsApp</a>
+        </section>
+    
+    
+       <!-- Preguntas Frecuentes -->
+       <section class="container mt-5">
+        <h2><i class="bi bi-question-circle"></i> Preguntas Frecuentes</h2>
+        <div class="accordion" id="faqAccordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            ¿Cómo puedo registrarme?
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Para registrarte, simplemente haz clic en el enlace de registro en la parte superior de la página y completa el formulario con tus datos.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            ¿Qué planes de entrenamiento ofrecen?
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Ofrecemos una variedad de planes de entrenamiento que se adaptan a diferentes niveles de condición física y objetivos. Puedes ver más detalles en nuestra sección de planes.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            ¿Cómo puedo contactar a un entrenador?
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Puedes contactar a un entrenador a través de nuestra sección de entrenadores, donde encontrarás sus perfiles y opciones de contacto.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</body>
+</html>
+{% endblock %}

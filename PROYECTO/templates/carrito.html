@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<h1> carrito</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <Link rel="icon" type="image/png" href="{% static '/images/Recurso 7@600x (1).png' %}"></Link>
+    <Link rel="stylesheet" type="text/css" href="{% static '/CSS/estilos.css' %}"></Link>
+    
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="mb-4">Carrito de Compras</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{ item.producto.nombre }}</td>
+                    <td>{{ item.cantidad }}</td>
+                    <td>${{ item.subtotal }}</td>
+                    <td>
+                        <a href="{% url 'eliminar_del_carrito' item.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                        <a href="{% url 'agregar_al_carrito' item.producto.id %}" class="btn btn-primary btn-sm">Agregar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="text-end">
+            <h4>Total: ${{ total }}</h4>
+            <a href="{% url 'comprar' %}" class="btn btn-success">Proceder a la Compra</a>
+        </div>
+    </div>
+   
+</body>
+</html>
+
+
+
+{% endblock %}

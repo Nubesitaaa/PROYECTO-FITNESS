@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <Link rel="icon" type="image/png" href="{% static '/images/Recurso 7@600x (1).png' %}"></Link>
+    <Link rel="stylesheet" type="text/css" href="{% static '/CSS/estilos.css' %}"></Link>
+    <title>Tu Página</title>
+
+</head>
+<body>
+    <!-- Navbar -->
+
+
+    <div class="container mt-5">
+        <!-- HU01: Formulario para agendar cita -->
+        
+
+                    <!-- HU01: Formulario de altura, peso y meta -->
+                    <section id="formulario">
+                        
+                        <form action="/metapersonal/" method="POST">
+                            {% csrf_token %}
+                            {{error}}
+                            <div class="form-group">
+                                <label for="altura">Altura (cm)</label>
+                                <input type="number" class="form-control" id="altura" name="altura" placeholder="Ingrese su altura">
+                            </div>
+                            <div class="form-group">
+                                <label for="peso">Peso (kg)</label>
+                                <input type="number" class="form-control" id="peso" name="peso" placeholder="Ingrese su peso">
+                            </div>
+                            <div class="form-group">
+                                <label for="meta">Meta</label>
+                                <input type="text" class="form-control" id="meta" name="meta" placeholder="Ingrese su meta">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Confirmar cita</button>
+                        </form>
+                    </section>
+                    </div>
+
+            </form>
+        </section>
+        </div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+{% endblock %}

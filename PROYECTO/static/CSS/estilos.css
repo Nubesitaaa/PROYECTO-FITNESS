@@ -1,0 +1,68 @@
+
+/*
+colores a utilizar de la marca
+background-color: #1a1a1a;
+background-color: #5e3adb;
+background-color: #200055;
+background-color: #b3b3b3;
+*/
+
+/*
+importacion de la fuente de la marca
+*/
+@font-face {
+    font-family: 'paladins';
+    src: url('/FITNESS/PROYECTO/static/fonts/paladins/paladins.ttf') format('truetype'),
+         url('') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'paladins',cursive;
+    background-color: #b3b3b3;
+
+    
+    
+}
+
+
+
+nav{
+    background-color:#1a1a1a;
+    color: #5e3adb;
+}
+
+nav a{
+    color: #5e3adb;
+}
+
+.navbar-brand img {
+    height: 40px; 
+    width: auto;
+}
+
+
+
+
+
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card-deck .card {
+    margin-bottom: 20px;
+}
+
+
+footer{
+    background-color: #1a1a1a;
+    color: #5e3adb;
+}
+
+
+.navbar-brand {
+    margin-left: 0;
+}

@@ -1,0 +1,53 @@
+
+
+
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <Link rel="stylesheet" type="text/css" href="{% static '/CSS/estilos.css' %}"></Link>
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <div class="row">
+        {% for producto in productos %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{{ producto.imagen.url }}" class="card-img-top" alt="{{ producto.nombre }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ producto.nombre }}</h5>
+                        <p class="card-text">${{ producto.precio }}</p>
+                        <p class="card-text">{{ producto.descripcion }}</p>
+                        <a href="{% url 'agregar_al_carrito' producto.id %}" class="btn btn-primary">Agregar al Carrito</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <!-- Botón de carrito -->
+    <div class="text-end">
+        <a href="{% url 'carrito' %}" class="btn btn-success">
+            <i class="fas fa-shopping-cart"></i> Carrito
+        </a>
+    </div>
+    
+    
+    {% endblock %}
+    
+</body>
+</html>
+
+<h1>Productos</h1>
+
+<!-- Mensaje de éxito -->

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <Link rel="stylesheet" type="text/css" href="{% static '/CSS/estilos.css' %}"></Link>
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 class="text-center my-4">Metas de Usuarios</h1>
+    <div class="container">
+        <table class="table table-striped table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Usuario</th>
+                    <th>Altura</th>
+                    <th>Peso</th>
+                    <th>Meta</th>
+                    <th>Fecha de Creación</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for meta in metas %}
+                <tr>
+                    <td>{{ meta.usuario_responsable }}</td>
+                    <td>{{ meta.altura }} cm</td>
+                    <td>{{ meta.peso }} kg</td>
+                    <td>{{ meta.meta }}</td>
+                    <td>{{ meta.fecha_creacion }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+{% endblock %}

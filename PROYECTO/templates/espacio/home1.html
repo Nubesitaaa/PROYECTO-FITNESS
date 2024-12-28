@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <Link rel="icon" type="image/png" href="{% static '/images/Recurso 7@600x (1).png' %}"></Link>
+    <Link rel="stylesheet" type="text/css" href="{% static '/CSS/estilos.css' %}"></Link>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hola, {{ user.username }}
+    
+    
+    
+    </h1>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'home' %}">HOME</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home1' %}">Home<span class="sr-only">(actual)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'perfil' %}">Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'miplan' %}">Mi Plan</a>
+                </li>
+    
+                
+                
+            </ul>
+        </div>
+    </nav>
+    
+    
+    <section id="miplan" class="mt-4">
+        <h2 class="mb-3">Mis Planes</h2>
+        <div class="row">
+            {% for user_plan in user_planes %}
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ user_plan.plan.nombre }}</h5>
+                        <p class="card-text">
+                            Horas de entrenamiento: {{ user_plan.plan.entrenamiento }}<br>
+                            Duración: {{ user_plan.plan.duracion }} días<br>
+                            Rutina: {{ user_plan.plan.rutina }}<br>
+                            Descripción: {{ user_plan.plan.descripcion }}<br>
+                            Creado por: {{ user_plan.plan.usuario_responsable }}
+                        </p>
+                        <a href="{{ user_plan.plan.link_descarga }}" class="btn btn-primary">Descargar</a>
+                        <a href="{% url 'salir_de_plan' user_plan.plan.id %}" class="btn btn-danger">Salir</a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <p>No tienes planes actualmente.</p>
+            {% endfor %}
+        </div>
+    </section>
+
+
+    
+</body>
+</html>
+
+
+
+ 
+
+
+{% endblock %}
